@@ -1,0 +1,14 @@
+﻿@model MVC4SampleSite.Models.Module_ImageBannerTraining
+
+@{
+    var ListofImages = new AgilityContentRepository<MVC4SampleSite.Models.ListofImages>("trainingpage_ImageBannerTraiC28E95");
+}
+
+<h1>@Model.Title</h1>
+
+@foreach (var img in ListofImages.Items())
+{
+    <h2>@img.Title</h2>
+    <img src="@img.Image.URL" alt="" />
+}
+

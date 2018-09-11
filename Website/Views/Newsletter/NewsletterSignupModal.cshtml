@@ -1,0 +1,76 @@
+﻿@using Agility.Web.Plugins
+@model Website.Models.Module_NewsletterSignupModal
+
+<div class="newsletter-signup-module">
+    @if (Model.Image != null)
+    {
+        <img src="@Model.Image.URL" />
+    }
+
+    @if (!string.IsNullOrWhiteSpace(Model.HTML))
+    {
+        <div class="rich-text">
+            @Html.Raw(Model.HTML)
+        </div>
+    }
+</div>
+
+
+<div class="modal fade modal-template-newsletter" data-on-load="@Model.OpenOnLoad" style="display: none">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">@Model.FormTitle</h4>
+            </div>
+            <div class="modal-body">
+                
+
+                <div class="newsletter-form">
+
+                    @Html.Raw(Model.FormDescription)
+
+                    <div class="input-group">
+                        <span class="input-group-addon">@Model.FirstNameLabel</span>
+                        <input type="text" class="form-control required" name="FirstName" />
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">@Model.LastNameLabel</span>
+                        <input type="text" class="form-control required" name="LastName" />
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">@Model.EmailAddressLabel</span>
+                        <input type="text" class="form-control required" name="EmailAddress" />
+                    </div>
+
+                </div>
+
+
+                <div class="success-message" style="display: none">
+                    @Html.Raw(Model.SuccessMessage)
+                </div>
+
+                <div class="loader" style="display: none">
+                    <img src="http://cdn.agilitycms.com/sample-mvc/ajax-loader.gif" />
+                </div>
+
+                @Html.Raw(Model.FormDisclaimer)
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="submit">@Model.SubmitLabel</button>
+                <ul class="validation alert-danger alert" style="display: none" data-required-format="@Model.RequiredFieldValidation"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    @Html.DelayedScriptExecutionWrapperBegin()
+
+    Modules.InitNewsletterSignupModal();
+
+    @Html.DelayedScriptExecutionWrapperEnd()
+</script>

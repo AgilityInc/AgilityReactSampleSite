@@ -1,0 +1,7 @@
+﻿@model MVC4SampleSite.Models.Module_ImageBanner
+
+<h1>@Model.Title</h1>
+
+<img src="@Model.Image.URL" alt="@Model.Image.Label" />
+
+<a href="@Data.UrlEval(Model.Url, "url")">My link</a>

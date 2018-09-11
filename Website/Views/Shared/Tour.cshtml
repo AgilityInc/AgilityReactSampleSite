@@ -1,0 +1,74 @@
+﻿@using Agility.Web.Plugins
+<script type="text/javascript">
+    @Html.DelayedScriptExecutionWrapperBegin()
+        Tour.InitSiteTour(
+            [
+                {
+                    orphan: true,
+                    title: 'Welcome!',
+                    content: '<p>Welcome to an Agility powered website. We\'ll take you through this site and show how it\'s all pieced together. You\'ll be thinking like an Agility developer in no time!<p>',
+                },
+                {
+                    orphan: true,
+                    title: 'Pages',
+                    content: '<p>Agility websites are comprised of Page Templates and Modules. Create a template and define some content sections where you can drop modules and voila! Let\'s see how this site is put together... </p>',
+                },
+                {
+                    path: '/',
+                    element: '.one-column-template',
+                    title: 'Page Templates',
+                    content: '',
+                    placement: 'bottom',
+                    htmlSource: 'OneColumnTemplate_Source.html'
+                },
+                {
+                    path: '/terms-and-conditions',
+                    element: '.one-column-template',
+                    title: 'Basic Rich Text Area',
+                    content: '<p>This represents the use of the Rich Text Area Module (included by default in all Agility sites). Content editors use a WYSIWYG editor to manage their content like a Word document. Great for basic text blocks or advanced HTML editors.</p>',
+                    placement: 'bottom'
+                },
+                {
+                    path: '/',
+                    element: '.jumbotron',
+                    title: 'Sample Module - Jumbotron',
+                    content: '',
+                    placement: 'bottom',
+                    htmlSource: 'Jumbotron_Source.html'
+                },
+                {
+                    path: '/',
+                    element: '.featured-content-module',
+                    title: 'Sample Module - Featured Content',
+                    content: '',
+                    placement: 'bottom',
+                    htmlSource: 'FeaturedContent_Source.html'
+                },
+                {
+                    path: '/products',
+                    element: '.product-details',
+                    placement: 'bottom',
+                    title: 'Product Listing Module with Filters',
+                    content: '',
+                    htmlSource: 'ProductListingModule_Source.html'
+                },
+                {
+                    path: '/contact-us',
+                    element: '.AgilityFormBuilder',
+                    title: 'Forms - Submit content into User Generated Content (UGC)',
+                    content: '',
+                    htmlSource: 'Forms_Source.html',
+                    placement: 'bottom'
+                },
+                {
+                    orphan: true,
+                    title: 'Getting Started...',
+                    content: '<p>Want to learn more? Get started with our training courses Developer 101, Intemediate Developer Training, and Advanced Developer Training.</p><p> Each training has a unique set of labs designed to teach core concepts and assignments to put them into practice. Contact support@@agilitycms.com for more information.</p>',
+                },
+
+
+
+            ]
+        );
+        @Html.DelayedScriptExecutionWrapperEnd()
+</script>
