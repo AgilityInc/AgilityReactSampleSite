@@ -259,6 +259,7 @@
     <Content Include="Views\Templates\BlankTemplate.cshtml" />
     <Content Include="Views\AgilityPartial\Index.cshtml" />
     <Content Include="Views\Templates\AgilityPartialRenderTemplate.cshtml" />
+    <Content Include="web.config.sample" />
     <None Include="Web.Staging.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

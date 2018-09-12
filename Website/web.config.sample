@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <configSections>
+    <!-- Agility.Web Config Group -->
+    <sectionGroup name="agility.web">
+      <section name="settings" type="Agility.Web.Configuration.Settings, Agility.Web" allowLocation="true" allowDefinition="Everywhere" restartOnExternalChanges="false" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <!--Agility  settings-->
+  <agility.web>
+    <settings applicationName="Agility Sample MVC5" developmentMode="true" contentCacheFilePath="c:\AgilityContent\">
+      <websites>
+        <add websiteName="{{enter value}}" securityKey="{{enter value}}" />
+      </websites>
+      <trace traceLevel="Warning" logFilePath="c:\AgilityLogs\SampleMVC4.log" emailErrors="false" />
+    </settings>
+  </agility.web>
+  <appSettings>
+    <!-- Start Agility App Settings -->
+    <add key="Agility_API_Url" value="{{enter value}}" />
+    <add key="Agility_API_Key" value="{{enter value}}" />
+    <add key="Agility_API_Password" value="{{enter value}}" />
+    <!-- End Agility App Settings -->
+    
+    <add key="EnableMinification" value="false" />
+    <add key="webpages:Version" value="3.0.0.0" />
+    <add key="webpages:Enabled" value="false" />
+    <add key="PreserveLoginUrl" value="true" />
+    <add key="ClientValidationEnabled" value="true" />
+    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+  </appSettings>
+  <!--
+    For a description of web.config changes see http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.6.2" />
+      </system.Web>
+  -->
+  <system.web>
+    <siteMap defaultProvider="AgilitySiteMapProvider">
+      <providers>
+        <add name="AgilitySiteMapProvider" type="Agility.Web.Providers.AgilitySiteMapProvider, Agility.Web" />
+      </providers>
+    </siteMap>
+    <compilation debug="true" targetFramework="4.6.2" />
+    <authentication mode="None" />
+    <httpRuntime targetFramework="4.6.2" />
+  <!-- Uncomment if using IIS 7 Classic Mode, IIS 6, or Mono --><!--
+		<httpHandlers>
+			<add verb="GET" path="*.jsx" type="React.Web.BabelHandlerFactory, React.Web" />
+		</httpHandlers>
+		--></system.web>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules runAllManagedModulesForAllRequests="true" />
+    
+  <handlers>
+      <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+      <remove name="OPTIONSVerbHandler" />
+      <remove name="TRACEVerbHandler" />
+      <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+    <remove name="Babel" /><add name="Babel" verb="GET" path="*.jsx" type="React.Web.BabelHandlerFactory, React.Web" preCondition="integratedMode" /></handlers></system.webServer>
+  <system.serviceModel>
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
+    <services>
+      <service behaviorConfiguration="agilityWebsiteServiceBehavior" name="Agility.Web.AgilityWebsiteService">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="agilityWebsiteServiceBinding" contract="Agility.Web.IAgilityWebsiteService" />
+        <endpoint binding="wsHttpBinding" bindingConfiguration="agilityWebsiteServiceBindingSSL" contract="Agility.Web.IAgilityWebsiteService" />
+      </service>
+    </services>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="agilityWebsiteServiceBehavior">
+          <serviceDebug includeExceptionDetailInFaults="true" />
+          <serviceMetadata httpGetEnabled="true" httpGetUrl="" />
+        </behavior>
+        <behavior name="">
+          <serviceMetadata httpGetEnabled="true" />
+          <serviceDebug includeExceptionDetailInFaults="false" />
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <bindings>
+      <wsHttpBinding>
+        <binding name="agilityWebsiteServiceBinding" receiveTimeout="00:30:00" maxReceivedMessageSize="2147483647">
+          <security mode="None">
+            <transport clientCredentialType="None" />
+            <message establishSecurityContext="false" />
+          </security>
+        </binding>
+        <binding name="agilityWebsiteServiceBindingSSL" receiveTimeout="00:30:00" maxReceivedMessageSize="2147483647">
+          <security mode="Transport">
+            <transport clientCredentialType="None" />
+          </security>
+        </binding>
+      </wsHttpBinding>
+    </bindings>
+  </system.serviceModel>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.6.5135.21930" newVersion="1.6.5135.21930" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-11.0.0.0" newVersion="11.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.6.0" newVersion="5.2.6.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Net.Http" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Antlr3.Runtime" publicKeyToken="eb42632606e9261f" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.5.0.2" newVersion="3.5.0.2" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="JavaScriptEngineSwitcher.Core" publicKeyToken="c608b2a8cc9e4472" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-2.4.9.0" newVersion="2.4.9.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
