@@ -83,11 +83,26 @@
       <HintPath>..\packages\JSPool.3.0.1\lib\net451\JSPool.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.4.0.0\lib\net451\Microsoft.Owin.FileSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.4.0.0\lib\net451\Microsoft.Owin.StaticFiles.dll</HintPath>
+    </Reference>
     <Reference Include="MsieJavaScriptEngine, Version=2.2.2.0, Culture=neutral, PublicKeyToken=a3a2846a37ac0d3e, processorArchitecture=MSIL">
       <HintPath>..\packages\MsieJavaScriptEngine.2.2.2\lib\net45\MsieJavaScriptEngine.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="Plugins, Version=1.0.1510.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Agility.Web.Plugins.1.0.1510.3\lib\net451\Plugins.dll</HintPath>
@@ -204,6 +219,7 @@
     </Compile>
     <Compile Include="Models\Product_Partial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\GlobalHeaderViewModel.cs" />
     <Compile Include="ViewModels\Pagination.cs" />
     <Compile Include="ViewModels\ProductDetailsModule.cs" />
@@ -217,26 +233,25 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="AgilityRedirector.htm" />
     <Content Include="AgilityWebsiteService.svc" />
-    <Content Include="Content\css\bootstrap-theme.css" />
-    <Content Include="Content\css\bootstrap.css" />
-    <Content Include="Content\css\font-awesome.min.css" />
-    <Content Include="Content\css\site.css" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="wwwroot\css\bootstrap-theme.css" />
+    <Content Include="wwwroot\css\bootstrap.css" />
+    <Content Include="wwwroot\css\font-awesome.min.css" />
+    <Content Include="wwwroot\css\site.css" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\Debug.pubxml" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
     <None Include="Properties\PublishProfiles\Staging.pubxml" />
-    <Content Include="readme.txt" />
-    <Content Include="Scripts\Agility.CMS.API.js" />
-    <Content Include="Scripts\Agility.js" />
-    <Content Include="Scripts\Agility.UGC.API.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\React\Global_Header.jsx" />
-    <Content Include="Scripts\React\Module_FeaturedContent.jsx" />
-    <Content Include="Scripts\React\Module_Jumbotron.jsx" />
+    <Content Include="wwwroot\js\vendor\Agility.CMS.API.js" />
+    <Content Include="wwwroot\js\vendor\Agility.js" />
+    <Content Include="wwwroot\js\vendor\Agility.UGC.API.js" />
+    <Content Include="wwwroot\js\vendor\bootstrap.js" />
+    <Content Include="wwwroot\js\vendor\bootstrap.min.js" />
+    <Content Include="wwwroot\js\vendor\jquery-1.10.2.js" />
+    <Content Include="wwwroot\js\components\Global_Header.jsx" />
+    <Content Include="wwwroot\js\components\Module_FeaturedContent.jsx" />
+    <Content Include="wwwroot\js\components\Module_Jumbotron.jsx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -278,9 +293,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

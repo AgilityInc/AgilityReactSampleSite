@@ -25,8 +25,8 @@
     <add key="Agility_API_Key" value="{{enter value}}" />
     <add key="Agility_API_Password" value="{{enter value}}" />
     <!-- End Agility App Settings -->
-    
-    <add key="EnableMinification" value="false" />
+
+    <add key="EnableMinification" value="true" />
     <add key="webpages:Version" value="3.0.0.0" />
     <add key="webpages:Enabled" value="false" />
     <add key="PreserveLoginUrl" value="true" />
@@ -50,21 +50,28 @@
     <compilation debug="true" targetFramework="4.6.2" />
     <authentication mode="None" />
     <httpRuntime targetFramework="4.6.2" />
-  <!-- Uncomment if using IIS 7 Classic Mode, IIS 6, or Mono --><!--
+    <!-- Uncomment if using IIS 7 Classic Mode, IIS 6, or Mono -->
+    <!--
 		<httpHandlers>
 			<add verb="GET" path="*.jsx" type="React.Web.BabelHandlerFactory, React.Web" />
 		</httpHandlers>
-		--></system.web>
+		-->
+  </system.web>
   <system.webServer>
     <validation validateIntegratedModeConfiguration="false" />
     <modules runAllManagedModulesForAllRequests="true" />
-    
-  <handlers>
+
+    <handlers>
       <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
       <remove name="OPTIONSVerbHandler" />
       <remove name="TRACEVerbHandler" />
+      <remove name="StaticFile"/>
+      <add name="Owin" verb="" path="*" type="Microsoft.Owin.Host.SystemWeb.OwinHttpHandler, Microsoft.Owin.Host.SystemWeb"/>
       <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
-    <remove name="Babel" /><add name="Babel" verb="GET" path="*.jsx" type="React.Web.BabelHandlerFactory, React.Web" preCondition="integratedMode" /></handlers></system.webServer>
+      <remove name="Babel" />
+      <add name="Babel" verb="GET" path="*.jsx" type="React.Web.BabelHandlerFactory, React.Web" preCondition="integratedMode" />
+    </handlers>
+  </system.webServer>
   <system.serviceModel>
     <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
     <services>

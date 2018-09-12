@@ -17,24 +17,24 @@ namespace Website.App_Start
 
 			bundles.Add(new StyleBundle("~/bundles/css")
 				.Include(
-					"~/Content/css/bootstrap.css",
-                    "~/Content/css/bootstrap-theme.css",
-					"~/Content/css/font-awesome.min.css",
-					"~/Content/css/site.css"
-					)
+                    "~/wwwroot/css/bootstrap.css",
+                    "~/wwwroot/css/bootstrap-theme.css",
+                    "~/wwwroot/css/font-awesome.min.css",
+                    "~/wwwroot/css/site.css"
+                    )
 				);
 
 
-			bundles.Add(new ScriptBundle("~/bundles/core")
-				.Include("~/Scripts/jquery-1.10.2.js",
-						"~/Scripts/bootstrap.js",
-						"~/Scripts/Agility.js",
-						"~/Scripts/Agility.UGC.API.js",
-						"~/Scripts/Agility.CMS.API.js")    
+			bundles.Add(new ScriptBundle("~/bundles/vendor")
+				.Include("~/wwwroot/js/vendor/jquery-1.10.2.js",
+                        "~/wwwroot/js/vendor/bootstrap.js",
+                        "~/wwwroot/js/vendor/Agility.js",
+                        "~/wwwroot/js/vendor/Agility.UGC.API.js",
+                        "~/wwwroot/js/vendor/Agility.CMS.API.js")    
 			);
 
-            bundles.Add(new BabelBundle("~/bundles/react")
-                    .IncludeDirectory("~/Scripts/React", "*.jsx")
+            bundles.Add(new BabelBundle("~/bundles/components")
+                    .IncludeDirectory("~/wwwroot/js/components", "*.jsx")
             );
 
 

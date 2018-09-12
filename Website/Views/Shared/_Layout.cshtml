@@ -21,11 +21,9 @@
     <!-- Begin Meta Variables from Custom Code -->
     @Html.GetHttpMetaVariables()
     <!-- End Meta Variables from Custom Code -->
-
     <!-- Begin Agility Page/Global Top Scripts -->
     @{Html.RenderAgilityTopScripts();}
     <!-- End Agiilty Page/Global Top Scripts -->
-
     <!-- Begin Agility Meta Tags/Additional Header Code -->
     @{Html.RenderAgilityCssOnly();}
     <!-- End Agility Meta Tags/Additional Header Code -->
@@ -33,8 +31,10 @@
     @System.Web.Optimization.Styles.Render("~/bundles/css")
 
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-sham.js"></script>
     <![endif]-->
 
 </head>
@@ -45,7 +45,7 @@
     <!-- End Inner Page Template -->
 
     <!-- Bundle of Core JS -->
-    @Scripts.Render("~/bundles/core")
+    @Scripts.Render("~/bundles/vendor")
     <!-- End Bundle of Core JS -->
 
     <!-- Initialize Agility UGC -->
@@ -59,7 +59,7 @@
     <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
 
     <!-- Bundle of React Components -->
-    @Scripts.Render("~/bundles/react")
+    @Scripts.Render("~/bundles/components")
     <!-- End Bundle of React Components --> 
 
     @Html.ReactInitJavaScript()

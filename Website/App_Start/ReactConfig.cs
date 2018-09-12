@@ -25,9 +25,9 @@ namespace Website
             //	.AddScriptWithoutTransform("~/Scripts/bundle.server.js")
 
             ReactSiteConfiguration.Configuration
-                .AddScript("~/Scripts/React/Module_Jumbotron.jsx")
-                .AddScript("~/Scripts/React/Module_FeaturedContent.jsx")
-                .AddScript("~/Scripts/React/Global_Header.jsx");
+                .AddScript("~/wwwroot/js/components/Module_Jumbotron.jsx")
+                .AddScript("~/wwwroot/js/components/Module_FeaturedContent.jsx")
+                .AddScript("~/wwwroot/js/components/Global_Header.jsx");
 
             //ReactSiteConfiguration.Configuration.DisableServerSideRendering();
         }
