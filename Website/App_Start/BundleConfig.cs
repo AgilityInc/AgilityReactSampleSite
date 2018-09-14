@@ -13,28 +13,24 @@ namespace Website.App_Start
 	{
 		internal static void RegisterBundles(BundleCollection bundles)
 		{
-
+            
 
 			bundles.Add(new StyleBundle("~/bundles/css")
 				.Include(
-                    "~/wwwroot/css/bootstrap.css",
-                    "~/wwwroot/css/bootstrap-theme.css",
-                    "~/wwwroot/css/font-awesome.min.css",
-                    "~/wwwroot/css/site.css"
+                    "~/wwwroot/dist/css/bootstrap.css",
+                    "~/wwwroot/dist/css/bootstrap-theme.css",
+                    "~/wwwroot/dist/css/font-awesome.min.css",
+                    "~/wwwroot/dist/css/site.css"
                     )
 				);
 
 
-			bundles.Add(new ScriptBundle("~/bundles/vendor")
-				.Include("~/wwwroot/js/vendor/jquery-1.10.2.js",
-                        "~/wwwroot/js/vendor/bootstrap.js",
-                        "~/wwwroot/js/vendor/Agility.js",
-                        "~/wwwroot/js/vendor/Agility.UGC.API.js",
-                        "~/wwwroot/js/vendor/Agility.CMS.API.js")    
-			);
-
-            bundles.Add(new BabelBundle("~/bundles/components")
-                    .IncludeDirectory("~/wwwroot/js/components", "*.jsx")
+            bundles.Add(new ScriptBundle("~/bundles/vendor.js")
+                .Include("~/wwwroot/dist/vendor/jquery-1.10.2.js",
+                        "~/wwwroot/dist/vendor/bootstrap.js",
+                        "~/wwwroot/dist/vendor/Agility.js",
+                        "~/wwwroot/dist/vendor/Agility.UGC.API.js",
+                        "~/wwwroot/dist/vendor/Agility.CMS.API.js")
             );
 
 

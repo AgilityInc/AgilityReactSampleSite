@@ -1,15 +1,5 @@
-﻿class Module_FeaturedContent extends React.Component {
-    render() {
-        const featuredContentItemsNodes = this.props.items.map(featuredContentItem => (
-            <FeaturedContentItem key={featuredContentItem.key} data={featuredContentItem}></FeaturedContentItem>
-        ));
-        return (
-            <div className="featured-content-module row">
-                {featuredContentItemsNodes}
-            </div>
-        );
-    }
-}
+﻿import React from 'react';
+import ReactDom from 'react-dom';
 
 class FeaturedContentItem extends React.Component {
     rawMarkup(propName) {
@@ -26,7 +16,9 @@ class FeaturedContentItem extends React.Component {
                 </a>
             </div>
         );
-        
+
     }
 
 }
+
+export default FeaturedContentItem;

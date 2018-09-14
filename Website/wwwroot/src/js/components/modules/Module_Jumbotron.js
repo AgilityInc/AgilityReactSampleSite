@@ -1,4 +1,7 @@
-﻿class Module_Jumbotron extends React.Component {
+﻿import React from 'react';
+import ReactDom from 'react-dom';
+
+class Module_Jumbotron extends React.Component {
     rawMarkup() {
         const rawMarkup = this.props.summary.toString();
         return { __html: rawMarkup };
@@ -17,3 +20,5 @@
         );
     }
 }
+
+export default Module_Jumbotron;

@@ -20,14 +20,16 @@ namespace Website
             // Browserify or Gulp), you can improve performance by disabling 
             // ReactJS.NET's version of Babel and loading the pre-transpiled 
             // scripts. Example:
-            //ReactSiteConfiguration.Configuration
-            //	.SetLoadBabel(false)
-            //	.AddScriptWithoutTransform("~/Scripts/bundle.server.js")
-
             ReactSiteConfiguration.Configuration
-                .AddScript("~/wwwroot/js/components/Module_Jumbotron.jsx")
-                .AddScript("~/wwwroot/js/components/Module_FeaturedContent.jsx")
-                .AddScript("~/wwwroot/js/components/Global_Header.jsx");
+                .SetLoadBabel(false)
+                .AddScriptWithoutTransform("~/wwwroot/dist/server.js");
+
+            ReactSiteConfiguration.Configuration.LoadReact = false;
+
+            //ReactSiteConfiguration.Configuration
+            //    .AddScript("~/wwwroot/js/components/Module_Jumbotron.jsx")
+            //    .AddScript("~/wwwroot/js/components/Module_FeaturedContent.jsx")
+            //    .AddScript("~/wwwroot/js/components/Global_Header.jsx");
 
             //ReactSiteConfiguration.Configuration.DisableServerSideRendering();
         }

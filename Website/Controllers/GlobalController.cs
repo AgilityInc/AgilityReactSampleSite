@@ -21,6 +21,7 @@ namespace Website.Controllers
 
         public ActionResult GlobalHeader()
         {
+
             var header = new AgilityContentRepository<GlobalHeader>("GlobalHeader").Item("");
 
             var viewModel = new GlobalHeaderViewModel();
@@ -38,10 +39,7 @@ namespace Website.Controllers
                 }
             }
 
-            return new ReactActionResult("Global_Header", viewModel)
-            {
-                ServerOnly = true
-            };
+            return new ReactActionResult("Components.Global_Header", viewModel);
         }
 
         public ActionResult GlobalFooter()

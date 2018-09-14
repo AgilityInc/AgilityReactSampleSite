@@ -28,7 +28,7 @@
     @{Html.RenderAgilityCssOnly();}
     <!-- End Agility Meta Tags/Additional Header Code -->
 
-    @System.Web.Optimization.Styles.Render("~/bundles/css")
+    @Styles.Render("~/bundles/css")
 
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -45,7 +45,7 @@
     <!-- End Inner Page Template -->
 
     <!-- Bundle of Core JS -->
-    @Scripts.Render("~/bundles/vendor")
+    @Scripts.Render("~/bundles/vendor.js")
     <!-- End Bundle of Core JS -->
 
     <!-- Initialize Agility UGC -->
@@ -55,11 +55,12 @@
     @{Html.RenderAgilityScriptsNoJQuery();}
     <!-- End Agility Bottom Scripts and Global Scripts -->`
 
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    @*<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>*@
+
 
     <!-- Bundle of React Components -->
-    @Scripts.Render("~/bundles/components")
+    @Scripts.Render("~/dist/client.js")
     <!-- End Bundle of React Components --> 
 
     @Html.ReactInitJavaScript()

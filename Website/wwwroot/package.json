@@ -1,0 +1,38 @@
+{
+  "name": "agility-react-sample-site",
+  "version": "1.0.0",
+  "description": "A sample site that shows how .NET MVC, React and AgilityCMS can work together.",
+  "private": true,
+  "scripts": {
+    "start": "webpack --mode development",
+    "buildDev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgilityInc/AgilityReactSampleSite.git"
+  },
+  "author": "James Vidler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgilityInc/AgilityReactSampleSite/issues"
+  },
+  "homepage": "https://github.com/AgilityInc/AgilityReactSampleSite#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "uglify-js": "^3.4.9"
+  }
+}

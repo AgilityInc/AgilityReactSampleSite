@@ -233,25 +233,32 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="AgilityRedirector.htm" />
     <Content Include="AgilityWebsiteService.svc" />
-    <Content Include="wwwroot\css\bootstrap-theme.css" />
-    <Content Include="wwwroot\css\bootstrap.css" />
-    <Content Include="wwwroot\css\font-awesome.min.css" />
-    <Content Include="wwwroot\css\site.css" />
-    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="wwwroot\dist\css\bootstrap-theme.css" />
+    <Content Include="wwwroot\dist\css\bootstrap.css" />
+    <Content Include="wwwroot\dist\css\font-awesome.min.css" />
+    <Content Include="wwwroot\dist\css\site.css" />
+    <Content Include="wwwroot\src\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="wwwroot\src\js\client.js" />
+    <Content Include="wwwroot\src\js\components\global\menuItem.js" />
+    <Content Include="wwwroot\src\js\components\global\siteNameHasLogo.js" />
+    <Content Include="wwwroot\src\js\components\global\siteNameNoLogo.js" />
+    <Content Include="wwwroot\src\js\components\modules\Module_FeaturedContent_FeaturedContentItem.js" />
+    <Content Include="wwwroot\src\js\server.js" />
+    <Content Include="wwwroot\webpack.config.js" />
     <None Include="Properties\PublishProfiles\Debug.pubxml" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
     <None Include="Properties\PublishProfiles\Staging.pubxml" />
-    <Content Include="wwwroot\js\vendor\Agility.CMS.API.js" />
-    <Content Include="wwwroot\js\vendor\Agility.js" />
-    <Content Include="wwwroot\js\vendor\Agility.UGC.API.js" />
-    <Content Include="wwwroot\js\vendor\bootstrap.js" />
-    <Content Include="wwwroot\js\vendor\bootstrap.min.js" />
-    <Content Include="wwwroot\js\vendor\jquery-1.10.2.js" />
-    <Content Include="wwwroot\js\components\Global_Header.jsx" />
-    <Content Include="wwwroot\js\components\Module_FeaturedContent.jsx" />
-    <Content Include="wwwroot\js\components\Module_Jumbotron.jsx" />
+    <Content Include="wwwroot\dist\vendor\Agility.CMS.API.js" />
+    <Content Include="wwwroot\dist\vendor\Agility.js" />
+    <Content Include="wwwroot\dist\vendor\Agility.UGC.API.js" />
+    <Content Include="wwwroot\dist\vendor\bootstrap.js" />
+    <Content Include="wwwroot\dist\vendor\bootstrap.min.js" />
+    <Content Include="wwwroot\dist\vendor\jquery-1.10.2.js" />
+    <Content Include="wwwroot\src\js\components\global\header.js" />
+    <Content Include="wwwroot\src\js\components\modules\Module_FeaturedContent.js" />
+    <Content Include="wwwroot\src\js\components\modules\Module_Jumbotron.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -278,9 +285,12 @@
     <None Include="Web.Staging.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="wwwroot\package.json" />
+    <Content Include="wwwroot\.babelrc" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="wwwroot\src\css\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -293,9 +303,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="wwwroot\src\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="wwwroot\src\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="wwwroot\src\fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

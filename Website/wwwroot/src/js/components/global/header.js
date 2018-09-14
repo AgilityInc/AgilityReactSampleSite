@@ -1,4 +1,10 @@
-﻿class Global_Header extends React.Component {
+﻿import React from 'react';
+import ReactDom from 'react-dom';
+import MenuItem from './menuItem';
+import SiteNameNoLogo from './siteNameNoLogo';
+import SiteNameHasLogo from './siteNameHasLogo';
+
+class Global_Header extends React.Component {
     render() {
         const menuItems = this.props.Menu.map(menuItem => (
             <MenuItem key={menuItem.Url} menuItem={menuItem}></MenuItem>
@@ -33,36 +39,10 @@
     }
 }
 
-class MenuItem extends React.Component {
-    render() {
-        return (
-            <li>
-                <a href={this.props.menuItem.Url} target={this.props.menuItem.Target}>
-                    {this.props.menuItem.Title}
-                </a>
-            </li>
-        );
-    }
-}
+export default Global_Header;
 
-class SiteNameHasLogo extends React.Component {
-    render() {
-        return (
-            <a className="navbar-brand" href="/">
-                <img src={this.props.GlobalHeader.SiteLogo.Url} title={this.props.GlobalHeader.SiteName} />
-                {this.props.GlobalHeader.SiteName}
-            </a>
-        );
-    }
-}
 
-class SiteNameNoLogo extends React.Component {
-    render() {
-        return (
-            <a className="navbar-brand" href="/">
-                {this.props.GlobalHeader.SiteName}
-            </a>
-        );
-    }
-}
+
+
+
 
