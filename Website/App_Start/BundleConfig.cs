@@ -25,13 +25,16 @@ namespace Website.App_Start
 				);
 
 
-            bundles.Add(new ScriptBundle("~/bundles/vendor.js")
+            bundles.Add(new ScriptBundle("~/bundles/vendor")
                 .Include("~/wwwroot/dist/vendor/jquery-1.10.2.js",
                         "~/wwwroot/dist/vendor/bootstrap.js",
                         "~/wwwroot/dist/vendor/Agility.js",
                         "~/wwwroot/dist/vendor/Agility.UGC.API.js",
                         "~/wwwroot/dist/vendor/Agility.CMS.API.js")
             );
+
+            //bundles.Add(new ScriptBundle("~/bundles/client")
+            //    .Include("~/wwwroot/dist/client.js"));
 
 
             if (string.Equals(ConfigurationManager.AppSettings["EnableMinification"], "true", StringComparison.CurrentCultureIgnoreCase))

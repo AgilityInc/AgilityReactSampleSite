@@ -231,14 +231,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="AgilityRedirector.htm" />
+    <Content Include="wwwroot\AgilityRedirector.htm" />
     <Content Include="AgilityWebsiteService.svc" />
     <Content Include="wwwroot\dist\css\bootstrap-theme.css" />
     <Content Include="wwwroot\dist\css\bootstrap.css" />
     <Content Include="wwwroot\dist\css\font-awesome.min.css" />
     <Content Include="wwwroot\dist\css\site.css" />
     <Content Include="wwwroot\src\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="favicon.ico" />
+    <Content Include="wwwroot\favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="wwwroot\src\js\client.js" />
     <Content Include="wwwroot\src\js\components\global\menuItem.js" />
@@ -278,9 +278,7 @@
     <Content Include="Views\Templates\TwoColumnTemplate.cshtml" />
     <Content Include="Views\Newsletter\NewsletterSignupModal.cshtml" />
     <Content Include="Views\Shared\Tour.cshtml" />
-    <Content Include="Views\Templates\BlankTemplate.cshtml" />
     <Content Include="Views\AgilityPartial\Index.cshtml" />
-    <Content Include="Views\Templates\AgilityPartialRenderTemplate.cshtml" />
     <Content Include="web.config.sample" />
     <None Include="Web.Staging.config">
       <DependentUpon>Web.config</DependentUpon>

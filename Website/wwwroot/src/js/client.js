@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 global['React'] = React;
 global['ReactDOM'] = ReactDOM;
 
+//how to reference vendor libraries???
+import $ from 'jquery';
+
 //React Components
 import Global_Header from './components/global/header'
 import Module_FeaturedContent from './components/modules/Module_FeaturedContent'
@@ -13,3 +16,4 @@ global['Components'] = {
     Module_FeaturedContent,
     Module_Jumbotron
 }
+

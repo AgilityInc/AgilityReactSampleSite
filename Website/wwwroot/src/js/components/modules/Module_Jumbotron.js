@@ -12,6 +12,7 @@ class Module_Jumbotron extends React.Component {
                 <h1>
                     {this.props.title}
                 </h1>
+                <h1>Double title!!!!</h1>
                 <span dangerouslySetInnerHTML={this.rawMarkup()} />
                 <a className="btn btn-primary btn-lg" role="button" target="_self" href="/" title={this.props.learnMoreLabel}>
                     {this.props.learnMoreLabel}

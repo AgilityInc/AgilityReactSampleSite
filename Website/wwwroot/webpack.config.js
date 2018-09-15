@@ -3,11 +3,15 @@
 module.exports = {
     entry: {
         server: ['babel-polyfill', './src/js/server.js'],
-        client: './src/js/client.js'
+        client: './src/js/client.js'       
     },
     output: {
         path: path.resolve('dist'),
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: '/dist/'
+    },
+    externals: {
+        jquery: /^(jquery|\$)$/i
     },
     resolve: {
         extensions: ['.js', '.jsx']
@@ -40,6 +44,17 @@ module.exports = {
                 ]
             }
         ]
+    },
+    devServer: {
+        proxy: {
+            '*': {
+                target: 'http://localhost:59666',
+                changeOrigin: true,
+            },
+            port: 8080,
+            host: '0.0.0.0',
+            hot: false
+        }
     },
     plugins: []
 };
