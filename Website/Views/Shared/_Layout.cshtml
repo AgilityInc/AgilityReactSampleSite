@@ -30,7 +30,10 @@
     @{Html.RenderAgilityCssOnly();}
     <!-- End Agility Meta Tags/Additional Header Code -->
 
+    @Styles.Render("~/bundles/vendor-css")
+
     @Styles.Render("~/bundles/css")
+
 
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -62,7 +65,7 @@
     <!-- End Agility Bottom Scripts and Global Scripts -->
 
     <!-- Bundle of React Components -->
-    @Scripts.Render("~/dist/client.js")
+    @Scripts.Render("~/bundles/client")
     <!-- End Bundle of React Components -->
 
     @Html.ReactInitJavaScript()

@@ -1,8 +1,8 @@
 ﻿import React from 'react';
 import ReactDom from 'react-dom';
-import MenuItem from './menuItem';
-import SiteNameNoLogo from './siteNameNoLogo';
-import SiteNameHasLogo from './siteNameHasLogo';
+import MenuItem from './MenuItem.js';
+import SiteNameNoLogo from './SiteNameNoLogo.js';
+import SiteNameHasLogo from './SiteNameHasLogo.js';
 
 class Global_Header extends React.Component {
     render() {

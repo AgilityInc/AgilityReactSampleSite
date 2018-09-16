@@ -14,17 +14,23 @@ namespace Website.App_Start
 		internal static void RegisterBundles(BundleCollection bundles)
 		{
             
-
-			bundles.Add(new StyleBundle("~/bundles/css")
+            //legacy global bundle
+			bundles.Add(new StyleBundle("~/bundles/vendor-css")
 				.Include(
                     "~/wwwroot/dist/css/bootstrap.css",
                     "~/wwwroot/dist/css/bootstrap-theme.css",
-                    "~/wwwroot/dist/css/font-awesome.min.css",
                     "~/wwwroot/dist/css/site.css"
                     )
 				);
 
+            //styles from webpack...
+            bundles.Add(new StyleBundle("~/bundles/css")
+                .Include(
+                    "~/wwwroot/dist/styles.css"
+                    )
+                );
 
+            //legacy vendor bundle
             bundles.Add(new ScriptBundle("~/bundles/vendor")
                 .Include("~/wwwroot/dist/vendor/jquery-1.10.2.js",
                         "~/wwwroot/dist/vendor/bootstrap.js",
@@ -33,8 +39,9 @@ namespace Website.App_Start
                         "~/wwwroot/dist/vendor/Agility.CMS.API.js")
             );
 
-            //bundles.Add(new ScriptBundle("~/bundles/client")
-            //    .Include("~/wwwroot/dist/client.js"));
+            //js from webpack...
+            bundles.Add(new ScriptBundle("~/bundles/client")
+                .Include("~/wwwroot/dist/client.js"));
 
 
             if (string.Equals(ConfigurationManager.AppSettings["EnableMinification"], "true", StringComparison.CurrentCultureIgnoreCase))

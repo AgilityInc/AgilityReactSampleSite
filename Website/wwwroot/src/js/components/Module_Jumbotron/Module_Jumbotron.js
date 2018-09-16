@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import ReactDom from 'react-dom';
+import style from '../../../css/shared.css'
 
 class Module_Jumbotron extends React.Component {
     rawMarkup() {
@@ -9,10 +10,9 @@ class Module_Jumbotron extends React.Component {
     render() {
         return (
             <div className="jumbotron">
-                <h1>
+                <h1 className={style.thing}>
                     {this.props.title}
                 </h1>
-                <h1>Double title!!!!</h1>
                 <span dangerouslySetInnerHTML={this.rawMarkup()} />
                 <a className="btn btn-primary btn-lg" role="button" target="_self" href="/" title={this.props.learnMoreLabel}>
                     {this.props.learnMoreLabel}
