@@ -36,7 +36,6 @@ namespace Website.Extensions
             var httpContextBase = context.HttpContext;
 
             var component = React.ReactEnvironment.Current.CreateComponent(this.ComponentName, this.Props, clientOnly: this.ClientOnly, serverOnly: this.ServerOnly);
-
             component.ContainerTag = !string.IsNullOrWhiteSpace(this.ContainerTag) ? this.ContainerTag : "div";
             component.ContainerClass = this.ContainerCssClass;
 

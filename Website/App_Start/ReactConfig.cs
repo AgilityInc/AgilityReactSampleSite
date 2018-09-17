@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Serialization;
 using React;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Website.ReactConfig), "Configure")]
@@ -24,7 +25,14 @@ namespace Website
                 .SetLoadBabel(false)
                 .AddScriptWithoutTransform("~/wwwroot/dist/server.js");
 
+            //We are adding our own via webpack
             ReactSiteConfiguration.Configuration.LoadReact = false;
+
+            //Tell the react config to use camelcase for property names
+            ReactSiteConfiguration.Configuration.SetJsonSerializerSettings(new Newtonsoft.Json.JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            });
 
             //ReactSiteConfiguration.Configuration
             //    .AddScript("~/wwwroot/js/components/Module_Jumbotron.jsx")

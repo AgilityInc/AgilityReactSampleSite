@@ -5,8 +5,8 @@ class MenuItem extends React.Component {
     render() {
         return (
             <li>
-                <a href={this.props.menuItem.Url} target={this.props.menuItem.Target}>
-                    {this.props.menuItem.Title}
+                <a href={this.props.menuItem.url} target={this.props.menuItem.target}>
+                    {this.props.menuItem.title}
                 </a>
             </li>
         );

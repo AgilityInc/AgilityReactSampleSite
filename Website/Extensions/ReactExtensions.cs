@@ -66,9 +66,6 @@ namespace Website.Extensions
                 {
                     string propName = propertyInfo.Name;
 
-                    //camelcase the propertyNames
-                    propName = Char.ToLowerInvariant(propName[0]) + propName.Substring(1);
-
                     if (propertyInfo.Name.Equals(DefaultKeyProperty))
                     {
                         key = propertyInfo.GetValue(o).ToString();
@@ -101,7 +98,7 @@ namespace Website.Extensions
 
             if (!string.IsNullOrEmpty(key))
             {
-                result.Add("key", key);
+                result.Add("Key", key);
             }
 
             return result;

@@ -6,15 +6,15 @@ import SiteNameHasLogo from './SiteNameHasLogo.js';
 
 class Global_Header extends React.Component {
     render() {
-        const menuItems = this.props.Menu.map(menuItem => (
-            <MenuItem key={menuItem.Url} menuItem={menuItem}></MenuItem>
+        const menuItems = this.props.menu.map(menuItem => (
+            <MenuItem key={menuItem.url} menuItem={menuItem}></MenuItem>
         ));
         let siteName;
 
-        if (this.props.GlobalHeader.SiteLogo) {
-            siteName = <SiteNameHasLogo GlobalHeader={this.props.GlobalHeader} />;
+        if (this.props.globalHeader.siteLogo) {
+            siteName = <SiteNameHasLogo globalHeader={this.props.globalHeader} />;
         } else {
-            siteName = <SiteNameNoLogo GlobalHeader={this.props.GlobalHeader} />;
+            siteName = <SiteNameNoLogo globalHeader={this.props.globalHeader} />;
         }
 
         return (

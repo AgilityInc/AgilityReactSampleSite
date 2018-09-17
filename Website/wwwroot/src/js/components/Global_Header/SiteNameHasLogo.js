@@ -5,8 +5,8 @@ class SiteNameHasLogo extends React.Component {
     render() {
         return (
             <a className="navbar-brand" href="/">
-                <img src={this.props.GlobalHeader.SiteLogo.Url} title={this.props.GlobalHeader.SiteName} />
-                {this.props.GlobalHeader.SiteName}
+                <img src={this.props.globalHeader.siteLogo.url} title={this.props.globalHeader.siteName} />
+                {this.props.globalHeader.siteName}
             </a>
         );
     }
