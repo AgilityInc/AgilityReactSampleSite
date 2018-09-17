@@ -237,16 +237,17 @@
     <Content Include="wwwroot\dist\css\bootstrap.css" />
     <Content Include="wwwroot\dist\css\site.css" />
     <Content Include="wwwroot\src\css\shared.css" />
-    <Content Include="wwwroot\src\js\components\Module_FeaturedContent\Module_FeaturedContent.css" />
     <Content Include="wwwroot\src\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="wwwroot\favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="wwwroot\src\js\client.js" />
+    <Content Include="wwwroot\src\js\components\Global_Header\styles.css" />
     <Content Include="wwwroot\src\js\components\Global_Header\MenuItem.js" />
     <Content Include="wwwroot\src\js\components\Global_Header\SiteNameHasLogo.js" />
     <Content Include="wwwroot\src\js\components\Global_Header\SiteNameNoLogo.js" />
     <Content Include="wwwroot\src\js\components\Module_FeaturedContent\FeaturedContentItem.js" />
-    <Content Include="wwwroot\src\js\components\Module_Jumbotron\Module_Jumbotron.css" />
+    <Content Include="wwwroot\src\js\components\Module_FeaturedContent\styles.css" />
+    <Content Include="wwwroot\src\js\components\Module_Jumbotron\styles.css" />
     <Content Include="wwwroot\src\js\server.js" />
     <Content Include="wwwroot\webpack.config.js" />
     <None Include="Properties\PublishProfiles\Debug.pubxml" />
@@ -258,9 +259,9 @@
     <Content Include="wwwroot\dist\vendor\bootstrap.js" />
     <Content Include="wwwroot\dist\vendor\bootstrap.min.js" />
     <Content Include="wwwroot\dist\vendor\jquery-1.10.2.js" />
-    <Content Include="wwwroot\src\js\components\Global_Header\Global_Header.js" />
-    <Content Include="wwwroot\src\js\components\Module_FeaturedContent\Module_FeaturedContent.js" />
-    <Content Include="wwwroot\src\js\components\Module_Jumbotron\Module_Jumbotron.js" />
+    <Content Include="wwwroot\src\js\components\Global_Header\index.js" />
+    <Content Include="wwwroot\src\js\components\Module_FeaturedContent\index.js" />
+    <Content Include="wwwroot\src\js\components\Module_Jumbotron\index.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

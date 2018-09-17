@@ -1,6 +1,7 @@
 ﻿import React from 'react';
 import ReactDom from 'react-dom';
-import style from '../../../css/shared.css'
+import style from './styles.css';
+import sharedStyle from '../../../css/shared.css'
 
 class Module_Jumbotron extends React.Component {
     rawMarkup() {
@@ -10,7 +11,7 @@ class Module_Jumbotron extends React.Component {
     render() {
         return (
             <div className="jumbotron">
-                <h1 className={style.thing}>
+                <h1 className={sharedStyle.thing}>
                     {this.props.title}
                 </h1>
                 <span dangerouslySetInnerHTML={this.rawMarkup()} />

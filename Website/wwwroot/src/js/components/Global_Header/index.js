@@ -4,6 +4,9 @@ import MenuItem from './MenuItem.js';
 import SiteNameNoLogo from './SiteNameNoLogo.js';
 import SiteNameHasLogo from './SiteNameHasLogo.js';
 
+import style from './styles.css';
+import sharedStyle from '../../../css/shared.css'
+
 class Global_Header extends React.Component {
     render() {
         const menuItems = this.props.menu.map(menuItem => (

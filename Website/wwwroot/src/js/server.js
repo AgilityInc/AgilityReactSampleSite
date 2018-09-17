@@ -7,9 +7,9 @@ global['ReactDOMServer'] = ReactDOMServer;
 
 
 //React Components
-import Global_Header from './components/Global_Header/Global_Header.js'
-import Module_FeaturedContent from './components/Module_FeaturedContent/Module_FeaturedContent.js'
-import Module_Jumbotron from './components/Module_Jumbotron/Module_Jumbotron.js'
+import Global_Header from './components/Global_Header'
+import Module_FeaturedContent from './components/Module_FeaturedContent'
+import Module_Jumbotron from './components/Module_Jumbotron'
 
 global['Components'] = {
     Global_Header,
