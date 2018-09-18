@@ -1,5 +1,4 @@
 ﻿import React from 'react';
-import ReactDom from 'react-dom';
 import FeaturedContentItem from './FeaturedContentItem.js';
 import style from './styles.css';
 import sharedStyle from '../../../css/shared.css'
