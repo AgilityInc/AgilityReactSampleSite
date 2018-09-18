@@ -52,6 +52,10 @@
     <Reference Include="Agility.UGC.API.WCF, Version=3.0.1308.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Agility.UGC.API.WCF.3.0.1308.0\lib\net451\Agility.UGC.API.WCF.dll</HintPath>
     </Reference>
+    <Reference Include="Agility.Web, Version=5.0.1808.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Agility.Web.5.0.1808\lib\net461\Agility.Web.dll</HintPath>
+    </Reference>
     <Reference Include="AjaxMin, Version=5.14.5506.26196, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
       <HintPath>..\packages\AjaxMin.5.14.5506.26202\lib\net40\AjaxMin.dll</HintPath>
     </Reference>
@@ -306,12 +310,6 @@
     <Content Include="wwwroot\src\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="wwwroot\src\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="wwwroot\src\fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\Workspaces\agility-vs-online\Agility CMS\Agility CMS 2014\Agility.Web.3\Agility.Web.net461.csproj">
-      <Project>{95c7513b-c95a-4bb5-bca2-366ff5e94fee}</Project>
-      <Name>Agility.Web.net461</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

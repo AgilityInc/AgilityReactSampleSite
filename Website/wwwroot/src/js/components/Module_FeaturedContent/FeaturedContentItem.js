@@ -11,7 +11,7 @@ class FeaturedContentItem extends React.Component {
             <div className="col-md-4 featured-content">
                 <h2>{this.props.data.title}</h2>
                 <span dangerouslySetInnerHTML={this.rawMarkup('summary')} />
-                <a href={this.props.data.viewDetailsURL.url} target={this.props.data.viewDetailsURL.target}>
+                <a href={this.props.data.viewDetailsURL.href} target={this.props.data.viewDetailsURL.target} title={this.props.data.viewDetailsURL.text}>
                     {this.props.data.viewDetailsLabel}
                 </a>
             </div>
