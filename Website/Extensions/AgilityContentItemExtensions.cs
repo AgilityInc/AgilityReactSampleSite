@@ -11,13 +11,22 @@ namespace Website.Extensions
 {
     public static class AgilityContentItemExtensions
     {
-        public static bool IsAnchorTag(string value)
+        private static bool IsAnchorTag(string value)
         {
             //test for anchor tag
             return value.StartsWith("<a href") && value.EndsWith("</a>");
         }
 
-        public static dynamic ToDynamic(this AgilityContentItem ci)
+        private static UrlField RemoveTilde(this UrlField urlField)
+        {
+            if (!string.IsNullOrEmpty(urlField.Href))
+            {
+                urlField.Href = urlField.Href.Replace("~", "");
+            }
+            return urlField;
+        }
+
+        public static dynamic ToDynamic(this AgilityContentItem ci, bool removeHrefTilde = false)
         {
             var dynamicObj = new ExpandoObject() as IDictionary<string, Object>;
             DataColumnCollection columns = ci.Row.Table.Columns;
@@ -42,7 +51,13 @@ namespace Website.Extensions
                     //test whether this is a UrlField
                     else if (IsAnchorTag(objValue as string))
                     {
-                        objValue = ci.ParseUrl(colName);
+                        if (removeHrefTilde)
+                        {
+                            objValue = ci.ParseUrl(colName).RemoveTilde();
+                        } else
+                        {
+                            objValue = ci.ParseUrl(colName);
+                        }
                     }
                 }
 

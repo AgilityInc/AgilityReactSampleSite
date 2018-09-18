@@ -45,6 +45,7 @@ namespace Website.Extensions
         /// <returns></returns>
         public static dynamic ToFrontendProps(this object o, string keyField = "ContentID")
         {
+            //convert to expando object
             dynamic result = o as IDictionary<string, Object>;
 
             //set a key if we can
@@ -64,7 +65,7 @@ namespace Website.Extensions
         public static dynamic ToFrontendProps(this AgilityContentItem ci, string keyField = "ContentID")
         {
             //convert to expando object
-            var o = ci.ToDynamic() as IDictionary<string, Object>;
+            var o = ci.ToDynamic(removeHrefTilde: true) as IDictionary<string, Object>;
 
             //set a key if we can
             SetKey(o, keyField);
@@ -102,5 +103,6 @@ namespace Website.Extensions
                 }
             }
         }
+
     }
 }
