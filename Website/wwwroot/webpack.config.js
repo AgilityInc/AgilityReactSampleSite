@@ -1,4 +1,5 @@
-﻿const path = require('path');
+﻿const iisPortNumber = 28799;
+const path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
@@ -36,7 +37,7 @@ module.exports = {
     devServer: {
         proxy: {
             '*': {
-                target: 'http://localhost:59666',
+                target: 'http://localhost:' + iisPortNumber,
                 changeOrigin: true,
             },
             port: 8080,

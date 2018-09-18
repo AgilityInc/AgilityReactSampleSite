@@ -47,7 +47,7 @@ namespace Website.Extensions
         {
             //convert to expando object
             dynamic result = o as IDictionary<string, Object>;
-
+            
             //set a key if we can
             SetKey(result, keyField);
             
