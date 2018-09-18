@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Sandbox", "Website\Website.Sandbox.csproj", "{DC5C5571-25AB-4AA9-A00E-56C9DCD9BB88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agility.Web.net461", "..\..\..\..\..\Workspaces\agility-vs-online\Agility CMS\Agility CMS 2014\Agility.Web.3\Agility.Web.net461.csproj", "{95C7513B-C95A-4BB5-BCA2-366FF5E94FEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,21 +20,17 @@ Global
 		{DC5C5571-25AB-4AA9-A00E-56C9DCD9BB88}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC5C5571-25AB-4AA9-A00E-56C9DCD9BB88}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{DC5C5571-25AB-4AA9-A00E-56C9DCD9BB88}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{95C7513B-C95A-4BB5-BCA2-366FF5E94FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C7513B-C95A-4BB5-BCA2-366FF5E94FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C7513B-C95A-4BB5-BCA2-366FF5E94FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C7513B-C95A-4BB5-BCA2-366FF5E94FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C7513B-C95A-4BB5-BCA2-366FF5E94FEE}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{95C7513B-C95A-4BB5-BCA2-366FF5E94FEE}.Staging|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C9A58248-2FD0-49E1-96A9-C76567B363C7}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 1
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://agility.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = Website\\Website.Sandbox.csproj
-		SccProjectName0 = Website
-		SccAuxPath0 = https://agility.visualstudio.com/defaultcollection
-		SccLocalPath0 = Website
-		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 	EndGlobalSection
 EndGlobal

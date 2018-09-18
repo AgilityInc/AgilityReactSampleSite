@@ -4,7 +4,7 @@ using React;
 using React.Web;
 using System.Linq;
 
-namespace Website.Extensions
+namespace Website
 {
     public class ReactActionResult : ActionResult
     {

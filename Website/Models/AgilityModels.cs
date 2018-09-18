@@ -55,6 +55,16 @@ namespace Website.Models
         public virtual bool Minify { get { if (!__minify_set) __minify = GetFieldValue<bool>("Minify"); __minify_set = true; return __minify; } set { __minify = value; __minify_set = true; } }
 
     }
+    public partial class Color : Agility.Web.AgilityContentItem
+    {
+        private string __title = null;
+        private bool __title_set = false;
+        public virtual string Title { get { if (!__title_set) __title = GetFieldValue<string>("Title"); __title_set = true; return __title; } set { __title = value; __title_set = true; } }
+        private string ___color = null;
+        private bool ___color_set = false;
+        public virtual string _Color { get { if (!___color_set) ___color = GetFieldValue<string>("Color"); ___color_set = true; return ___color; } set { ___color = value; ___color_set = true; } }
+
+    }
     public partial class FeaturedContentItem : Agility.Web.AgilityContentItem
     {
         private string __title = null;
@@ -177,6 +187,145 @@ namespace Website.Models
         public virtual bool SubmitIntoUGC { get { if (!__submitintougc_set) __submitintougc = GetFieldValue<bool>("SubmitIntoUGC"); __submitintougc_set = true; return __submitintougc; } set { __submitintougc = value; __submitintougc_set = true; } }
 
     }
+    public partial class Module_AgilityFormBuilder : Agility.Web.AgilityContentItem
+    {
+        private string __textblob = null;
+        private bool __textblob_set = false;
+        public virtual string TextBlob { get { if (!__textblob_set) __textblob = GetFieldValue<string>("TextBlob"); __textblob_set = true; return __textblob; } set { __textblob = value; __textblob_set = true; } }
+        private int __recordtypeid;
+        private bool __recordtypeid_set = false;
+        public virtual int RecordTypeID { get { if (!__recordtypeid_set) __recordtypeid = GetFieldValue<int>("RecordTypeID"); __recordtypeid_set = true; return __recordtypeid; } set { __recordtypeid = value; __recordtypeid_set = true; } }
+        private string __submitbuttonlabel = null;
+        private bool __submitbuttonlabel_set = false;
+        public virtual string SubmitButtonLabel { get { if (!__submitbuttonlabel_set) __submitbuttonlabel = GetFieldValue<string>("SubmitButtonLabel"); __submitbuttonlabel_set = true; return __submitbuttonlabel; } set { __submitbuttonlabel = value; __submitbuttonlabel_set = true; } }
+        private string __successcopy = null;
+        private bool __successcopy_set = false;
+        public virtual string SuccessCopy { get { if (!__successcopy_set) __successcopy = GetFieldValue<string>("SuccessCopy"); __successcopy_set = true; return __successcopy; } set { __successcopy = value; __successcopy_set = true; } }
+        private string __errorcopy = null;
+        private bool __errorcopy_set = false;
+        public virtual string ErrorCopy { get { if (!__errorcopy_set) __errorcopy = GetFieldValue<string>("ErrorCopy"); __errorcopy_set = true; return __errorcopy; } set { __errorcopy = value; __errorcopy_set = true; } }
+        private string __webhook = null;
+        private bool __webhook_set = false;
+        public virtual string WebHook { get { if (!__webhook_set) __webhook = GetFieldValue<string>("WebHook"); __webhook_set = true; return __webhook; } set { __webhook = value; __webhook_set = true; } }
+        private string __additionaljson = null;
+        private bool __additionaljson_set = false;
+        public virtual string AdditionalJSON { get { if (!__additionaljson_set) __additionaljson = GetFieldValue<string>("AdditionalJSON"); __additionaljson_set = true; return __additionaljson; } set { __additionaljson = value; __additionaljson_set = true; } }
+        private string __codefieldsjson = null;
+        private bool __codefieldsjson_set = false;
+        public virtual string CodeFieldsJSON { get { if (!__codefieldsjson_set) __codefieldsjson = GetFieldValue<string>("CodeFieldsJSON"); __codefieldsjson_set = true; return __codefieldsjson; } set { __codefieldsjson = value; __codefieldsjson_set = true; } }
+        private string __emailto = null;
+        private bool __emailto_set = false;
+        public virtual string EmailTo { get { if (!__emailto_set) __emailto = GetFieldValue<string>("EmailTo"); __emailto_set = true; return __emailto; } set { __emailto = value; __emailto_set = true; } }
+        private string __emailfrom = null;
+        private bool __emailfrom_set = false;
+        public virtual string EmailFrom { get { if (!__emailfrom_set) __emailfrom = GetFieldValue<string>("EmailFrom"); __emailfrom_set = true; return __emailfrom; } set { __emailfrom = value; __emailfrom_set = true; } }
+        private string __emailsubjecttemplate = null;
+        private bool __emailsubjecttemplate_set = false;
+        public virtual string EmailSubjectTemplate { get { if (!__emailsubjecttemplate_set) __emailsubjecttemplate = GetFieldValue<string>("EmailSubjectTemplate"); __emailsubjecttemplate_set = true; return __emailsubjecttemplate; } set { __emailsubjecttemplate = value; __emailsubjecttemplate_set = true; } }
+        private string __emailbodytemplate = null;
+        private bool __emailbodytemplate_set = false;
+        public virtual string EmailBodyTemplate { get { if (!__emailbodytemplate_set) __emailbodytemplate = GetFieldValue<string>("EmailBodyTemplate"); __emailbodytemplate_set = true; return __emailbodytemplate; } set { __emailbodytemplate = value; __emailbodytemplate_set = true; } }
+        private string __themeid = null;
+        private bool __themeid_set = false;
+        public virtual string ThemeID { get { if (!__themeid_set) __themeid = GetFieldValue<string>("ThemeID"); __themeid_set = true; return __themeid; } set { __themeid = value; __themeid_set = true; } }
+        private string __inputheight = null;
+        private bool __inputheight_set = false;
+        public virtual string InputHeight { get { if (!__inputheight_set) __inputheight = GetFieldValue<string>("InputHeight"); __inputheight_set = true; return __inputheight; } set { __inputheight = value; __inputheight_set = true; } }
+        private string __inputbackgroundcolor = null;
+        private bool __inputbackgroundcolor_set = false;
+        public virtual string InputBackgroundColor { get { if (!__inputbackgroundcolor_set) __inputbackgroundcolor = GetFieldValue<string>("InputBackgroundColor"); __inputbackgroundcolor_set = true; return __inputbackgroundcolor; } set { __inputbackgroundcolor = value; __inputbackgroundcolor_set = true; } }
+        private string __inputfontsize = null;
+        private bool __inputfontsize_set = false;
+        public virtual string InputFontSize { get { if (!__inputfontsize_set) __inputfontsize = GetFieldValue<string>("InputFontSize"); __inputfontsize_set = true; return __inputfontsize; } set { __inputfontsize = value; __inputfontsize_set = true; } }
+        private string __inputfontcolor = null;
+        private bool __inputfontcolor_set = false;
+        public virtual string InputFontColor { get { if (!__inputfontcolor_set) __inputfontcolor = GetFieldValue<string>("InputFontColor"); __inputfontcolor_set = true; return __inputfontcolor; } set { __inputfontcolor = value; __inputfontcolor_set = true; } }
+        private string __inputmargintop = null;
+        private bool __inputmargintop_set = false;
+        public virtual string InputMarginTop { get { if (!__inputmargintop_set) __inputmargintop = GetFieldValue<string>("InputMarginTop"); __inputmargintop_set = true; return __inputmargintop; } set { __inputmargintop = value; __inputmargintop_set = true; } }
+        private string __inputmarginbottom = null;
+        private bool __inputmarginbottom_set = false;
+        public virtual string InputMarginBottom { get { if (!__inputmarginbottom_set) __inputmarginbottom = GetFieldValue<string>("InputMarginBottom"); __inputmarginbottom_set = true; return __inputmarginbottom; } set { __inputmarginbottom = value; __inputmarginbottom_set = true; } }
+        private string __inputoutline = null;
+        private bool __inputoutline_set = false;
+        public virtual string InputOutline { get { if (!__inputoutline_set) __inputoutline = GetFieldValue<string>("InputOutline"); __inputoutline_set = true; return __inputoutline; } set { __inputoutline = value; __inputoutline_set = true; } }
+        private string __inputborder = null;
+        private bool __inputborder_set = false;
+        public virtual string InputBorder { get { if (!__inputborder_set) __inputborder = GetFieldValue<string>("InputBorder"); __inputborder_set = true; return __inputborder; } set { __inputborder = value; __inputborder_set = true; } }
+        private string __inputfocusedborder = null;
+        private bool __inputfocusedborder_set = false;
+        public virtual string InputFocusedBorder { get { if (!__inputfocusedborder_set) __inputfocusedborder = GetFieldValue<string>("InputFocusedBorder"); __inputfocusedborder_set = true; return __inputfocusedborder; } set { __inputfocusedborder = value; __inputfocusedborder_set = true; } }
+        private string __inputborderradius = null;
+        private bool __inputborderradius_set = false;
+        public virtual string InputBorderRadius { get { if (!__inputborderradius_set) __inputborderradius = GetFieldValue<string>("InputBorderRadius"); __inputborderradius_set = true; return __inputborderradius; } set { __inputborderradius = value; __inputborderradius_set = true; } }
+        private string __inputpadding = null;
+        private bool __inputpadding_set = false;
+        public virtual string InputPadding { get { if (!__inputpadding_set) __inputpadding = GetFieldValue<string>("InputPadding"); __inputpadding_set = true; return __inputpadding; } set { __inputpadding = value; __inputpadding_set = true; } }
+        private string __formfontfamily = null;
+        private bool __formfontfamily_set = false;
+        public virtual string FormFontFamily { get { if (!__formfontfamily_set) __formfontfamily = GetFieldValue<string>("FormFontFamily"); __formfontfamily_set = true; return __formfontfamily; } set { __formfontfamily = value; __formfontfamily_set = true; } }
+        private string __formbackgroundcolor = null;
+        private bool __formbackgroundcolor_set = false;
+        public virtual string FormBackgroundColor { get { if (!__formbackgroundcolor_set) __formbackgroundcolor = GetFieldValue<string>("FormBackgroundColor"); __formbackgroundcolor_set = true; return __formbackgroundcolor; } set { __formbackgroundcolor = value; __formbackgroundcolor_set = true; } }
+        private string __formpadding = null;
+        private bool __formpadding_set = false;
+        public virtual string FormPadding { get { if (!__formpadding_set) __formpadding = GetFieldValue<string>("FormPadding"); __formpadding_set = true; return __formpadding; } set { __formpadding = value; __formpadding_set = true; } }
+        private string __formmargin = null;
+        private bool __formmargin_set = false;
+        public virtual string FormMargin { get { if (!__formmargin_set) __formmargin = GetFieldValue<string>("FormMargin"); __formmargin_set = true; return __formmargin; } set { __formmargin = value; __formmargin_set = true; } }
+        private string __formborder = null;
+        private bool __formborder_set = false;
+        public virtual string FormBorder { get { if (!__formborder_set) __formborder = GetFieldValue<string>("FormBorder"); __formborder_set = true; return __formborder; } set { __formborder = value; __formborder_set = true; } }
+        private string __formborderradius = null;
+        private bool __formborderradius_set = false;
+        public virtual string FormBorderRadius { get { if (!__formborderradius_set) __formborderradius = GetFieldValue<string>("FormBorderRadius"); __formborderradius_set = true; return __formborderradius; } set { __formborderradius = value; __formborderradius_set = true; } }
+        private string __buttonbackgroundcolor = null;
+        private bool __buttonbackgroundcolor_set = false;
+        public virtual string ButtonBackgroundColor { get { if (!__buttonbackgroundcolor_set) __buttonbackgroundcolor = GetFieldValue<string>("ButtonBackgroundColor"); __buttonbackgroundcolor_set = true; return __buttonbackgroundcolor; } set { __buttonbackgroundcolor = value; __buttonbackgroundcolor_set = true; } }
+        private string __buttonfontcolor = null;
+        private bool __buttonfontcolor_set = false;
+        public virtual string ButtonFontColor { get { if (!__buttonfontcolor_set) __buttonfontcolor = GetFieldValue<string>("ButtonFontColor"); __buttonfontcolor_set = true; return __buttonfontcolor; } set { __buttonfontcolor = value; __buttonfontcolor_set = true; } }
+        private string __buttonfontsize = null;
+        private bool __buttonfontsize_set = false;
+        public virtual string ButtonFontSize { get { if (!__buttonfontsize_set) __buttonfontsize = GetFieldValue<string>("ButtonFontSize"); __buttonfontsize_set = true; return __buttonfontsize; } set { __buttonfontsize = value; __buttonfontsize_set = true; } }
+        private string __buttonfontweight = null;
+        private bool __buttonfontweight_set = false;
+        public virtual string ButtonFontWeight { get { if (!__buttonfontweight_set) __buttonfontweight = GetFieldValue<string>("ButtonFontWeight"); __buttonfontweight_set = true; return __buttonfontweight; } set { __buttonfontweight = value; __buttonfontweight_set = true; } }
+        private string __buttonheight = null;
+        private bool __buttonheight_set = false;
+        public virtual string ButtonHeight { get { if (!__buttonheight_set) __buttonheight = GetFieldValue<string>("ButtonHeight"); __buttonheight_set = true; return __buttonheight; } set { __buttonheight = value; __buttonheight_set = true; } }
+        private string __buttonwidth = null;
+        private bool __buttonwidth_set = false;
+        public virtual string ButtonWidth { get { if (!__buttonwidth_set) __buttonwidth = GetFieldValue<string>("ButtonWidth"); __buttonwidth_set = true; return __buttonwidth; } set { __buttonwidth = value; __buttonwidth_set = true; } }
+        private string __buttonmargin = null;
+        private bool __buttonmargin_set = false;
+        public virtual string ButtonMargin { get { if (!__buttonmargin_set) __buttonmargin = GetFieldValue<string>("ButtonMargin"); __buttonmargin_set = true; return __buttonmargin; } set { __buttonmargin = value; __buttonmargin_set = true; } }
+        private string __buttonpadding = null;
+        private bool __buttonpadding_set = false;
+        public virtual string ButtonPadding { get { if (!__buttonpadding_set) __buttonpadding = GetFieldValue<string>("ButtonPadding"); __buttonpadding_set = true; return __buttonpadding; } set { __buttonpadding = value; __buttonpadding_set = true; } }
+        private string __buttonborder = null;
+        private bool __buttonborder_set = false;
+        public virtual string ButtonBorder { get { if (!__buttonborder_set) __buttonborder = GetFieldValue<string>("ButtonBorder"); __buttonborder_set = true; return __buttonborder; } set { __buttonborder = value; __buttonborder_set = true; } }
+        private string __buttonborderradius = null;
+        private bool __buttonborderradius_set = false;
+        public virtual string ButtonBorderRadius { get { if (!__buttonborderradius_set) __buttonborderradius = GetFieldValue<string>("ButtonBorderRadius"); __buttonborderradius_set = true; return __buttonborderradius; } set { __buttonborderradius = value; __buttonborderradius_set = true; } }
+        private string __labelfontsize = null;
+        private bool __labelfontsize_set = false;
+        public virtual string LabelFontSize { get { if (!__labelfontsize_set) __labelfontsize = GetFieldValue<string>("LabelFontSize"); __labelfontsize_set = true; return __labelfontsize; } set { __labelfontsize = value; __labelfontsize_set = true; } }
+        private string __labelfontcolor = null;
+        private bool __labelfontcolor_set = false;
+        public virtual string LabelFontColor { get { if (!__labelfontcolor_set) __labelfontcolor = GetFieldValue<string>("LabelFontColor"); __labelfontcolor_set = true; return __labelfontcolor; } set { __labelfontcolor = value; __labelfontcolor_set = true; } }
+        private string __labelfontweight = null;
+        private bool __labelfontweight_set = false;
+        public virtual string LabelFontWeight { get { if (!__labelfontweight_set) __labelfontweight = GetFieldValue<string>("LabelFontWeight"); __labelfontweight_set = true; return __labelfontweight; } set { __labelfontweight = value; __labelfontweight_set = true; } }
+        private string __labelmargin = null;
+        private bool __labelmargin_set = false;
+        public virtual string LabelMargin { get { if (!__labelmargin_set) __labelmargin = GetFieldValue<string>("LabelMargin"); __labelmargin_set = true; return __labelmargin; } set { __labelmargin = value; __labelmargin_set = true; } }
+        private string __labelpadding = null;
+        private bool __labelpadding_set = false;
+        public virtual string LabelPadding { get { if (!__labelpadding_set) __labelpadding = GetFieldValue<string>("LabelPadding"); __labelpadding_set = true; return __labelpadding; } set { __labelpadding = value; __labelpadding_set = true; } }
+
+    }
     public partial class Module_ImageGallery : Agility.Web.AgilityContentItem
     {
         private Gallery __imagegallery = null;
@@ -267,6 +416,13 @@ namespace Website.Models
         public virtual string FilterCategoriesAllLabel { get { if (!__filtercategoriesalllabel_set) __filtercategoriesalllabel = GetFieldValue<string>("FilterCategoriesAllLabel"); __filtercategoriesalllabel_set = true; return __filtercategoriesalllabel; } set { __filtercategoriesalllabel = value; __filtercategoriesalllabel_set = true; } }
 
     }
+    public partial class Module_ReactModule1 : Agility.Web.AgilityContentItem
+    {
+        private string __title = null;
+        private bool __title_set = false;
+        public virtual string Title { get { if (!__title_set) __title = GetFieldValue<string>("Title"); __title_set = true; return __title; } set { __title = value; __title_set = true; } }
+
+    }
     public partial class Module_RichTextArea : Agility.Web.AgilityContentItem
     {
         private string __textblob = null;
@@ -276,4 +432,3 @@ namespace Website.Models
     }
 
 }
-

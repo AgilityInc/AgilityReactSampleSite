@@ -9,7 +9,7 @@ namespace Website.ViewModels
 {
     public class GlobalHeaderViewModel
     {
-        public GlobalHeader GlobalHeader { get; set; }
+        public object GlobalHeader { get; set; }
         public List<Link> Menu { get; set; }
     }
 

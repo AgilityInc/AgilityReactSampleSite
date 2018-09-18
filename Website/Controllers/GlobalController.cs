@@ -25,7 +25,7 @@ namespace Website.Controllers
             var header = new AgilityContentRepository<GlobalHeader>("GlobalHeader").Item("");
 
             var viewModel = new GlobalHeaderViewModel();
-            viewModel.GlobalHeader = header;
+            viewModel.GlobalHeader = header.ToFrontendProps();
             viewModel.Menu = new List<Link>();
 
             if (SiteMap.Provider.RootNode != null)
