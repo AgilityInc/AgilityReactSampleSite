@@ -6,8 +6,8 @@
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "build:dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build:dev": "webpack --mode=development",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,6 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "react": "^16.5.0",
-    "react-dom": "^16.5.0",
-    "uglify-js": "^3.4.9"
+    "react-dom": "^16.5.0"
   }
 }
