@@ -1,4 +1,4 @@
-# AgilityReactSampleSite
+# Agility React Sample Site
 
 This is a sample website using [.NET MVC 5](https://docs.microsoft.com/en-us/aspnet/mvc/mvc5) for the backend, [Agility](https://agilitycms.com) as the CMS, [ReactJS.NET](http://reactjs.net/) as the frontend, [NPM](https://www.npmjs.com/) as the package manager, and [Webpack 4](https://webpack.js.org/) as the module bundler.
 
@@ -15,8 +15,9 @@ The purpose of this repository is to have a sample site setup to demonstrate how
 ## Try it Out
 1. Download the source code by downloading as a Zip or clone the repository
 2. Rename the Web.config.sample file in the root of the /Website folder to Web.config
-3. Contact [support@agilitycms.com](mailTo:support@agilitycms.com) to get a CMS WebsiteName and SecurityKey
-4. Set your WebsiteName and SecurityKey in the web.config
+3. Contact [support@agilitycms.com](mailTo:support@agilitycms.com) to get a CMS WebsiteName and SecurityKey, UGC Base Url, UGC API Key, and UGC API Password
+4. Set your WebsiteName and SecurityKey in the agility.web section of the web.config
+5. Set your UGC details in the app settings
 
 ## Issues
 See [Issues](https://github.com/AgilityInc/AgilityReactSampleSite/issues) for a list of features to be implemented and any related bugs.
