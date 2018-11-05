@@ -68,6 +68,51 @@ At this time of writing, only several modules and components on this sample site
 - Jumbotron Module
 - Featured Content Module
 
+## How JS Bundling Works
+Webpack is used as the module bundler. Since this supports Server-Side-Rendering (SSR), the server must be able to render react components. In order to handle seperate dependancies for the server/client, there are 2 entry points, *client* and *server*. Where the *server* entry point is for the dependancies for SSR, the *client* entry point is for dependancies on react components that will be handled on the client-side in the browser. 
+
+**wwwroot/webpack.config.js**
+```javascript
+module.exports = {
+    entry: {
+        server: ['babel-polyfill', './src/js/server.js'],
+        client: './src/js/client.js'       
+    },
+    output: {
+        path: path.resolve('dist'),
+        filename: '[name].js',
+        publicPath: '/dist/'
+    },
+...
+}
+```
+
+## How CSS Bundling Works
+This project is using the *extract-text-webpack-plugin*. When webpack sees dependancies on css files within the react components, the styles will be bundled into the /dist/styles.css file.
+
+You can reference class names in your React components using variables, this will ensure the generated HTML and CSS are scoped to your specific React component and addresses the issue of duplicate css rules.
+
+```javascript
+import style from './styles.css';
+
+class Module_HeadingH2 extends React.Component {
+    render() {
+        return (
+            <div className="container">
+                <h2 className={style.medium}>{this.props.title}</h2>
+            </div>
+        );
+    }
+}
+export default Module_HeadingH2;
+```
+
+```css
+.styles__medium__2FbM_ {
+    font-size: 20px;
+}
+```
+
 ## How Modules Work
 Modules work exactly the same way they do in a regular Agility site. They have a corresponding PartialView or ControllerActionResult. In this sample site, the implemented modules have a ControllerActionResult just as normal, however instead of returning a PartialView, the result is a ReactActionResult.
 
@@ -132,7 +177,6 @@ global['Components'] = {
 ```
 npm run build:dev
 ```
-
 
 ## How to: Add a new Module without ANY C# or Razor Code
 If you are adding a simple module to the site, you can actually by-pass updating the backend and pass the data from the module directly to a React component. This allows you to add new functionality to your site in VS Code, only by writing your React component in JS and adding any appropriate styles. This is an ideal workflow for a frontend developer.
