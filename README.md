@@ -5,12 +5,19 @@ This is a sample website using [.NET MVC 5](https://docs.microsoft.com/en-us/asp
 ## Goal
 The purpose of this repository is to have a sample site setup to demonstrate how React developers can work in an Agility .NET website, and enable them to use their favorite front-end tools such as VS Code, NPM and Webpack.
 
+## Benefits
+- Build a consistent, more maintainable UI
+- More frontend developer friendly
+- Separation of concerns between backend and frontend
+- Build frontends faster
+
 ## Features
 - Build your entire front-end using React JS components - does not require knowledge of .NET or Razor syntax
 - Use ES6 *imports* and *exports*
 - Integrates with Agility.Web and the Content Repository to use content from your Agility instance
 - Server-side rendering support enabled by ReactJS.NET
 - Take advantage of NPM and Webpack support to customize your frontend dev experience
+
 
 ## Backend: Visual Studio + ASP.NET
 This project is based on the .NET framework (not .NET Core), therefore you still need to use Visual Studio 2015/2017 to restore nuget packages, and build the project after changes to C# code. You'll also need a development server that supports running an ASP.NET website such as IIS or IIS express. This is also important if you want to implement the webpack-dev-server proxy.
@@ -55,7 +62,7 @@ npm run start
 
 11. The site should open in your default browser using a port number assigned by the webpack-dev-server
 
-## Implemented Modules
+## Project State
 At this time of writing, only several modules and components on this sample site have been converted to using ReactJS. This includes:
 - Global Header
 - Jumbotron Module
@@ -90,6 +97,78 @@ return new ReactActionResult("Components.Jumbotron", viewModel)
 };
 ```
 
+## How to: Add a new Module using React
+1. Create a module just like you normally would, and set the *Output Template* to a Controller Action Result
+2. Update your C# Agility API classes by refreshing your C# models - *tip: use the Agility Visual Studio Extension for this or you can do it manually by downloading the new file from the Content Manager*
+3. Write your Controller Action Result code, returning a ReactActionResult to the name of your corresponding React component (which will be created in the next steps).
+``` csharp
+public ActionResult Jumbotron(Module_Jumbotron module)
+{
+
+    var viewModel = module.ToFrontendProps();
+    return new ReactActionResult("Components.Module_Jumbotron", viewModel);
+}
+```
+5. Build the C# project in Visual Studio to complile the code
+6. In the **wwwroot/src/js/components** folder add a new folder that will contain your React component file, any sub components, and corresponding CSS files.
+7. You need to tell webpack about the dependancy on your React component by opening to the *server.js* file and the *client.js* file located in the **wwwroot/src/** directory and adding an *imports* statement and adding the object to the global JS variable *Components*
+```javascript
+//React Components
+import Global_Header from './components/Global_Header'
+import Module_FeaturedContent from './components/Module_FeaturedContent'
+import Module_Jumbotron from './components/Module_Jumbotron'
+import Module_Banner from './components/Module_Banner'
+import Module_Heading from './components/Module_Heading'
+import Module_HeadingH2 from './components/Module_HeadingH2'
+
+//Save them in the Components global variable so they can be referenced by the .NET ReactActionResult
+global['Components'] = {
+    Global_Header,
+    Module_FeaturedContent,
+    Module_Jumbotron
+}
+```
+8. Build the client site using npm
+```
+npm run build:dev
+```
+
+
+## How to: Add a new Module without ANY C# or Razor Code
+If you are adding a simple module to the site, you can actually by-pass updating the backend and pass the data from the module directly to a React component. This allows you to add new functionality to your site in VS Code, only by writing your React component in JS and adding any appropriate styles. This is an ideal workflow for a frontend developer.
+
+This sample site uses an **experimental** approach where you can specify a module definition to use an existing ControllerActionResult, pass an argument of the React component you wish to use and the ControllerActionResult will automatically pass your data from the module to the component that you specified.
+
+1. Create a new Module Definition
+2. Add your fields in the *Form Builder* tab as usual.
+3. Add a new field called "ComponentName", set the Default Value to the name of your React Component
+4. In the *Output Template*, for **Controller** enter 'Modules', for **Action** enter 'FrontendComponent'. Save, close and publish the module definition.
+5. Create your ReactJS component and register it within the *server.js* and *client.js* entry points for webpack
+6. Build the client site using npm
+```
+npm run build:dev
+```
+6. At runtime, the following code will be executed for your Module:
+``` csharp
+public ActionResult FrontendComponent(AgilityContentItem module)
+{
+    string componentName = null;
+    try
+    {
+        componentName = module["ComponentName"] as string;
+    } catch
+    {
+        throw new ApplicationException("Module does not implement a field called 'ComponentName', cannot execute React component.");
+    }
+
+    //convert the module data to a dynamic object, then convert to front-end props (removing unecessary fields)
+    var viewModel = module.ToFrontendProps();
+
+    return new ReactActionResult($"Components.{componentName}", viewModel);
+}
+```
+You just created a module without writing any server-side code (aside from the JS which ultimately gets run on the server).
+
 ## How Global Content Works
 Often you will have a Global Header or Global Footer that is invoked either in the main Layout.cshtml file or a page template. This can be a React component as well. In this sample site, the Global Header is setup to be a React component. It is invoked from the main Layout file as a child ControllerActionResult and ultimately returns a ReactActionResult just like a Module.
 
@@ -122,10 +201,19 @@ public ActionResult GlobalHeader()
 
     return new ReactActionResult("Components.Global_Header", viewModel)
     { 
-        ServerOnly = true
+        ServerOnly = true //only output this as server output, there is no client interactivity
     };
 }
 ```
+
+
+## Helpful Extensions
+**ToFrontendProps:**
+Will remove Agility specific properties from an object that do not need to be passed to the client. This is done for performance and efficiency.
+``` csharp
+viewModel.GlobalHeader = header.ToFrontendProps(); //Removes things like 'CreatedDate', 'ModifiedDate' etc...
+```
+
 
 ## Issues
 See [Issues](https://github.com/AgilityInc/AgilityReactSampleSite/issues) for a list of features to be implemented and any related bugs.
