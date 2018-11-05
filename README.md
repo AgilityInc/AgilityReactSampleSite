@@ -2,6 +2,8 @@
 
 This is a sample website using [.NET MVC 5](https://docs.microsoft.com/en-us/aspnet/mvc/mvc5) for the backend, [Agility](https://agilitycms.com) as the CMS, [ReactJS.NET](http://reactjs.net/) as the frontend, [NPM](https://www.npmjs.com/) as the package manager, and [Webpack 4](https://webpack.js.org/) as the module bundler.
 
+[View in Support site](https://agilitycms.zendesk.com/hc/en-us/articles/360018753311)
+
 ## Goal
 The purpose of this repository is to have a sample site setup to demonstrate how React developers can work in an Agility .NET website, and enable them to use their favorite front-end tools such as VS Code, NPM and Webpack.
 
