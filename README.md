@@ -55,6 +55,78 @@ npm run start
 
 11. The site should open in your default browser using a port number assigned by the webpack-dev-server
 
+## Implemented Modules
+At this time of writing, only several modules and components on this sample site have been converted to using ReactJS. This includes:
+- Global Header
+- Jumbotron Module
+- Featured Content Module
+
+## How Modules Work
+Modules work exactly the same way they do in a regular Agility site. They have a corresponding PartialView or ControllerActionResult. In this sample site, the implemented modules have a ControllerActionResult just as normal, however instead of returning a PartialView, the result is a ReactActionResult.
+
+Default: Server and Client rendered:
+``` csharp
+//This will Server-Side-Render (SSR) the component, as well as instruct the client application to pick-up where the server left off
+return new ReactActionResult("Components.Jumbotron", viewModel);
+```
+
+The ReactActionResult accepts a string representing a ReactJS component, and an object that will be serialzied to JSON and passed as a property to the React component. You can decide whether this React component should be rendererd on the server only, the client only, or both. SSR is important if the content must be SEO friendly, or you want to pre-load complex listings before they are sent to the client. Client only outputs are recommended when the content is not required to be SEO friendly. A server-only rendering would be benficial if the output does not require any client interactivity and you are simply using React as a view engine.
+
+Server Only:
+``` csharp
+return new ReactActionResult("Components.Jumbotron", viewModel)
+{ 
+  ClientOnly = false,
+  ServerOnly = true
+};
+```
+
+Client Only:
+``` csharp
+return new ReactActionResult("Components.Jumbotron", viewModel)
+{ 
+  ClientOnly = true,
+  ServerOnly = false
+};
+```
+
+## How Global Content Works
+Often you will have a Global Header or Global Footer that is invoked either in the main Layout.cshtml file or a page template. This can be a React component as well. In this sample site, the Global Header is setup to be a React component. It is invoked from the main Layout file as a child ControllerActionResult and ultimately returns a ReactActionResult just like a Module.
+
+In **Layout.cshtml**:
+```
+@Html.Action("GlobalHeader", "Global")
+```
+
+In **GlobalController.cs**:
+``` csharp
+public ActionResult GlobalHeader()
+{
+
+    var header = new AgilityContentRepository<GlobalHeader>("GlobalHeader").Item("");
+
+    var viewModel = new GlobalHeaderViewModel();
+    viewModel.GlobalHeader = header.ToFrontendProps();
+    viewModel.Menu = new List<Link>();
+
+    if (SiteMap.Provider.RootNode != null)
+    {
+        foreach(AgilitySiteMapNode node in SiteMap.Provider.RootNode.ChildNodes)
+        {
+            if(node.IsVisibleInMenu())
+            {
+                viewModel.Menu.Add(new Link() { Url = node.Url.Replace("~", ""), Title = node.Title, Target = node.Target });
+            }
+        }
+    }
+
+    return new ReactActionResult("Components.Global_Header", viewModel)
+    { 
+        ServerOnly = true
+    };
+}
+```
+
 ## Issues
 See [Issues](https://github.com/AgilityInc/AgilityReactSampleSite/issues) for a list of features to be implemented and any related bugs.
 
